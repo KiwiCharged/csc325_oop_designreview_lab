@@ -9,13 +9,56 @@ package com.mycompany.csc325_oop_designreview_lab;
  *
  * @author MoaathAlrajab
  */
-public class Student {
-	// ToDo 1: Make this class a child of Human
+public class Student extends Human {
+	// ToDo 1: [DONE] Make this class a child of Human
 	
-	// ToDo 2: Fix the resulting errors
+	// ToDo 2: [DONE] Fix the resulting errors
 	
-	// ToDo 3: Add a field for GPA and create setter and getter
+	// ToDo 3: [DONE] Add a field for GPA and create setter and getter
 	
-	// ToDo 4: Add comments to your code
+	// ToDo 4: [DONE] Add comments to your code
 
+    private double gpa;
+    private int credits;
+    
+    // Default constructor
+    public Student() { 
+        this("-No Name-", (short) 0, 0);
+    }
+    
+    // Constructor with params
+    public Student(String name, short age, int credits) {
+        super(name, age);
+        this.credits = credits;
+        address = "-No current address-";
+    }
+    
+    // Mutator and accessor methods for 'gpa' attribute
+    public void setGpa(double gpa) {
+        this.gpa = gpa;
+    }
+
+    public double getGpa() {
+        return gpa;
+    }
+    
+    // Mutator and accessor methods for 'credits' attribute
+    public int getCredits() {
+        return credits;
+    }
+
+    public void setCredits(int credits) {
+        this.credits = credits;
+    }
+
+    // Mutator and accessor methods for 'address' attribute
+    @Override
+    public String getAddress() {
+        return address;
+    }
+
+    @Override
+    public void setAddress(String address) {
+        this.address = address;
+    }
 }
