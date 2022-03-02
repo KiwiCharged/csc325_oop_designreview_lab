@@ -10,8 +10,6 @@ package com.mycompany.csc325_oop_designreview_lab;
  */
 public class Freshman extends Student {
     
-    
-    
     // Default constructor
     public Freshman() {
         this("-No name-", (short) 0, 0);
@@ -21,15 +19,9 @@ public class Freshman extends Student {
     public Freshman(String name, int age, int credits) {
         super(name, (short) age, credits);
     }
-
-    
     
     @Override
     public String toString() {
-        return "-Student Info-" 
-                + "Name: " + name
-                + "Age: " + age
-                + "Address: " + address
-                + "Credits: " + credits;
+        return super.toString() + "\nGrade level: " + "Freshman\n";
     }
 }

@@ -18,8 +18,8 @@ public class Student extends Human {
 	
 	// ToDo 4: [DONE] Add comments to your code
 
-    private double gpa;
-    private int credits;
+    protected double gpa;
+    protected int credits;
     
     // Default constructor
     public Student() { 
@@ -27,8 +27,8 @@ public class Student extends Human {
     }
     
     // Constructor with params
-    public Student(String name, short age, int credits) {
-        super(name, age);
+    public Student(String name, int age, int credits) {
+        super(name, (short) age);
         this.credits = credits;
         address = "-No current address-";
     }
@@ -60,5 +60,16 @@ public class Student extends Human {
     @Override
     public void setAddress(String address) {
         this.address = address;
+    }
+    
+    // ToString with all attributes of current class and parent class
+    @Override
+    public String toString() {
+        return "-Student Info-" 
+                + "\nName: " + name
+                + "\nAge: " + age
+                + "\nAddress: " + address
+                + "\nGPA: " + gpa
+                + "\nCredits: " + credits;
     }
 }

@@ -10,8 +10,6 @@ package com.mycompany.csc325_oop_designreview_lab;
  */
 public class Senior extends Student {
     
-    private int credits;
-    
     // Default constructor
     public Senior() {
         this("-No name-", (short) 0, 85);
@@ -19,30 +17,20 @@ public class Senior extends Student {
     
     // Constructor with params
     public Senior(String name, int age, int credits) {
-        super(name, (short) age);
-        this.credits = credits;
-    }
-
-    // Mutator and accessor methods for 'credits' attribute
-    public int getCredits() {
-        return credits;
+        super(name, (short) age, credits);
     }
 
     // Minimum bound of 85 for 'credit' value
-    public boolean setCredits(int credits) {
+    @Override
+    public void setCredits(int credits) {
         if (credits < 85) 
-            return false;
+            return;
         
         this.credits = credits;
-        return true;
     }
     
     @Override
     public String toString() {
-        return "-Student Info-" 
-                + "Name: " + name
-                + "Age: " + age
-                + "Address: " + address
-                + "Credits: " + credits;
+        return super.toString() + "\nGrade level: " + "Senior\n";
     }
 }
